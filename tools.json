@@ -1,0 +1,86 @@
+{
+"get_album_list_from_text": [
+    {
+    "type": "function",
+    "function": {
+        "name": "get_album_list_from_text",
+        "description": "Get a list of album releases from a text coming from a webpage",
+        "parameters": {
+            "type": "object",
+            "properties": {
+                "albums": {
+                    "type": "array",
+                    "description": "The name of the released albums",
+                    "items": {
+                        "type": "object",
+                        "properties": {
+                            "title": {
+                                "type": "string",
+                                "description": "The title of the album"
+                            },
+                            "artist": {
+                                "type": "string",
+                                "description": "The artist of the album"
+                            },
+                            "date": {
+                                "type": "string",
+                                "description": "The release date of the album. The date format should be 'day month year' without a comma, for example, '21 May 2023'. Add the current year if no year is supplied"
+                            }
+                        }
+                    }
+                }
+            },
+            "required": ["albums"]
+            }
+        }
+    }
+    ],
+    "get_movie_list_from_text": [
+        {
+        "type": "function",
+        "function": {
+            "name": "get_movie_list_from_text",
+            "description": "Get a list of movie releases from a text coming from a webpage",
+            "parameters": {
+                "type": "object",
+                "properties": {
+                    "movies": {
+                        "type": "array",
+                        "description": "The name of the unreleased movies",
+                        "items": {
+                            "type": "object",
+                            "properties": {
+                                "title": {
+                                    "type": "string",
+                                    "description": "The title of the album"
+                                },
+                                "actors": {
+                                    "type": "array",
+                                    "description": "The actors of the album",
+                                    "items": {
+                                        "type": "string",
+                                        "properties":{
+                                            "actor":{
+                                                "type":"string",
+                                                "description":"The name of the actor"
+                                        }
+                                        }
+                                    }
+                                },
+                                "date": {
+                                    "type": "string",
+                                    "description": "The release date of the movie. The date format should be 'day month year' without a comma, for example, '21 May 2023'. Add the current year if no year is supplied"
+                                }
+                            }
+                        }
+                    }
+                },
+                "required": ["movies"]
+                }
+            }
+        }
+        ]
+
+
+
+}
