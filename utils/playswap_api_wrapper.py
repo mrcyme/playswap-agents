@@ -9,8 +9,9 @@ class PlayswapWrapper:
 
     def create_playlist(self, title, description):
         data = {
-            'name': title,
-            'description': description
+            'title': title,
+            'description': description,
+            "isApproved": False
         }
         response = requests.post(f'{API_URL}/Playlist/', headers={
             'Content-Type': 'application/json',
@@ -55,7 +56,7 @@ class PlayswapWrapper:
         response = requests.post(f'{API_URL}/Playlist/{playlist_id}/Influence', headers={
             'Content-Type': 'application/json',
             'Authorization': f'Bearer {self.token}'
-        }, json={"uri": influence_id})
+        }, json={"spotifyId": influence_id})
         return response.json()
 
     def delete_influences(self, playlist_id):
